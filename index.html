@@ -3,21 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#a60c28">
-  <meta name="description" content="Portal de acceso SENATI con diseño inspirado en los paisajes y colores del Perú.">
+  <meta name="theme-color" content="#d9102a">
+  <meta name="description" content="Portal de acceso SENATI con la bandera del Perú animada de fondo.">
   <title>SENATI | Bienvenido al Perú</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://thumb.wikimedia.org" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{color-scheme:dark;--red:#f43d5c;--red-light:#ff8b9b;--cream:#fff2e8;--muted:#c9b8bc}
     *{box-sizing:border-box}
     html{min-height:100%}
     body{margin:0;min-height:100vh;background:#130a12;color:#fff9fa;font-family:"DM Sans",sans-serif;overflow-x:hidden}
-    .scene{position:fixed;inset:-4%;z-index:-4;pointer-events:none;background-image:linear-gradient(#0d0b19a0,#310b1a5a),url("https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Panoramic_view_of_Machu_Picchu.jpg/3840px-Panoramic_view_of_Machu_Picchu.jpg");background-position:center;background-size:cover;animation:cinema 29s ease-in-out infinite alternate;will-change:transform}
-    @keyframes cinema{from{transform:scale(1.04) translate(-1.5%,0)}to{transform:scale(1.18) translate(2%,-1.5%)}}
-    .shade{position:fixed;inset:0;z-index:-3;pointer-events:none;background:linear-gradient(100deg,#0e0b18dc 0%,#18091ecc 27%,#250f22a3 56%,#140917bd 100%),radial-gradient(ellipse at 4% 100%,#c01e3d82 0%,transparent 58%),radial-gradient(ellipse at 100% 0%,#ff274744 0%,transparent 46%)}
+    /* Bandera peruana creada con CSS: tres franjas verticales rojo-blanco-rojo */
+    .scene{position:fixed;inset:-5%;z-index:-4;pointer-events:none;background:linear-gradient(90deg,#c8102e 0%,#c8102e 33.333%,#fff 33.333%,#fff 66.666%,#c8102e 66.666%,#c8102e 100%);transform-origin:center center;animation:flagFloat 15s ease-in-out infinite alternate;will-change:transform;overflow:hidden}
+    .scene:before{content:"";position:absolute;inset:-12%;background:repeating-linear-gradient(177deg,#ffffff22 0px,#ffffff04 32px,#00000022 72px,#ffffff27 118px),radial-gradient(ellipse at 20% 14%,#ffffff66,transparent 38%);mix-blend-mode:soft-light;animation:flagWaves 11s ease-in-out infinite;filter:blur(7px)}
+    .scene:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 28%,#ffffff2c 47%,#00000017 58%,transparent 74%);background-size:180% 100%;mix-blend-mode:soft-light;animation:flagShine 14s linear infinite}
+    @keyframes flagFloat{from{transform:scale(1.035) translate(-1%,0) skewY(-.4deg)}to{transform:scale(1.085) translate(1%,-.7%) skewY(.4deg)}}
+    @keyframes flagWaves{0%,100%{transform:translate(-1%,0) skewY(-1.4deg)}50%{transform:translate(2%,-1%) skewY(1.4deg)}}
+    @keyframes flagShine{to{background-position:180% 0}}
+    .shade{position:fixed;inset:0;z-index:-3;pointer-events:none;background:linear-gradient(100deg,#190b15bd 0%,#210c18a8 28%,#260e207d 60%,#180a15ba 100%),radial-gradient(ellipse at 4% 100%,#c01e3d64 0%,transparent 58%),radial-gradient(ellipse at 100% 0%,#ff274738 0%,transparent 46%)}
     .shade:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0 40%,#ffeff408 55%,transparent 70%);background-size:190% 100%;animation:lightSweep 19s linear infinite}
     @keyframes lightSweep{to{background-position:190% 0}}
     .mist{position:fixed;z-index:-2;pointer-events:none;left:-20%;right:-20%;height:50%;bottom:-20%;filter:blur(34px);background:radial-gradient(ellipse at 30% 70%,#fff4f025,transparent 54%),radial-gradient(ellipse at 72% 60%,#ff476f38,transparent 60%);animation:mistMove 20s ease-in-out infinite alternate}
@@ -84,13 +88,12 @@
   <main class="shell">
     <section class="intro" aria-label="Presentación">
       <div class="brand"><span class="logo" aria-hidden="true">✦</span> SENATI<span style="color:#ff708d">.</span></div>
-      <div class="badge-peru"><span class="flag" aria-label="Bandera de Perú" role="img"><i></i><i></i><i></i></span> INSPIRADO EN EL PERÚ</div>
-      <h1>Un país de historia.<br><span>Un futuro sin límites.</span></h1>
-      <p class="lead">Desde el corazón de los Andes, seguimos construyendo nuevas oportunidades. Conecta con tu aprendizaje y descubre todo lo que puedes lograr.</p>
+      <div class="badge-peru"><span class="flag" aria-label="Bandera de Perú" role="img"><i></i><i></i><i></i></span> BANDERA DEL PERÚ</div>
+      <h1>Orgullo peruano.<br><span>Un futuro sin límites.</span></h1>
+      <p class="lead">La bandera del Perú nos inspira a crear, aprender y construir el futuro. Ingresa a tu espacio digital con una experiencia moderna y llena de identidad.</p>
       <div class="divider-accent" aria-hidden="true"></div>
       <div class="features"><span>Tu espacio digital</span><span>Aprendizaje conectado</span><span>Diseño para ti</span></div>
-      <div class="region">MACHU PICCHU · CUSCO · PERÚ</div>
-      <p class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Panoramic_view_of_Machu_Picchu.jpg" target="_blank" rel="noopener noreferrer">Alec Gamoff / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>. Imagen adaptada con efectos visuales.</p>
+      <div class="region">ROJO · BLANCO · ROJO · PERÚ</div>
     </section>
     <section class="panel" aria-label="Formulario de acceso">
       <div class="panel-top"><span class="tag">✦ PORTAL DE ACCESO</span><span class="symbol" aria-hidden="true">◇</span></div>
