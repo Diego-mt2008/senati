@@ -1,91 +1,133 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffacd9"><title>SENATI | Acceso</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{color-scheme:light;--pink:#ff5ba8;--soft:#ffd1eb;--ink:#352039;--glass:#211328;--muted:#c7b5ce}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--ink);font-family:"DM Sans",sans-serif;background:linear-gradient(125deg,#ffd8ee 0%,#ffacd9 38%,#f38acb 72%,#d7a4ff 100%);background-size:200% 200%;animation:skyShift 16s ease-in-out infinite}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(circle at 10% 10%,#fff9 0%,transparent 35%),radial-gradient(circle at 90% 75%,#ad4bff44 0%,transparent 36%),radial-gradient(circle at 45% 110%,#ff54b566 0%,transparent 45%)}
-body:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(110deg,transparent 34%,#ffffff16 50%,transparent 66%);background-size:220% 100%;animation:shimmer 13s linear infinite}
-@keyframes skyShift{50%{background-position:100% 100%}}
-@keyframes shimmer{to{background-position:-220% 0}}
-.grid{position:fixed;inset:0;z-index:0;opacity:.20;pointer-events:none;background-image:linear-gradient(#76356544 1px,transparent 1px),linear-gradient(90deg,#76356544 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(90deg,#000,transparent 95%)}
-.ambient{position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(2px);opacity:.54}
-.ambient.a{width:270px;height:270px;top:6%;right:11%;background:radial-gradient(circle,#fff8fdee,transparent 69%);animation:drift 9s ease-in-out infinite alternate}
-.ambient.b{width:400px;height:400px;left:-160px;bottom:-170px;background:radial-gradient(circle,#ff4ba6bb,transparent 69%);animation:drift 11s ease-in-out infinite alternate-reverse}
-@keyframes drift{to{transform:translate(38px,-30px) scale(1.1)}}
-.shell{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr 1fr;max-width:1280px;min-height:100vh;margin:auto;padding:40px;gap:60px;align-items:center}
-.brand{display:flex;align-items:center;gap:12px;font:700 22px "Space Grotesk";letter-spacing:2px;color:#391c3e}
-.brand-mark{display:grid;place-items:center;width:45px;height:45px;border:1px solid #f978bb;border-radius:13px;background:linear-gradient(145deg,#52153f,#a63181);color:#fff;font-size:26px;box-shadow:0 6px 24px #c6248455}
-.intro{padding:0 3vw}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#713260;letter-spacing:2px;font-size:11px;font-weight:700;margin:100px 0 20px}
-.dot{width:8px;height:8px;background:#f51b93;border-radius:50%;box-shadow:0 0 0 5px #f72c9230,0 0 15px #ef218e;animation:heartbeat 2s ease-in-out infinite}
-@keyframes heartbeat{50%{box-shadow:0 0 0 9px #f72c920e,0 0 20px #ef218e}}
-h1{font:700 clamp(48px,5.4vw,80px)/1.05 "Space Grotesk";letter-spacing:-4px;margin:0 0 22px;color:#411d44;text-shadow:0 2px 25px #fff6}
-h1 span{background:linear-gradient(100deg,#8b2777,#f21988 48%,#8b3dce);color:transparent;background-clip:text;-webkit-background-clip:text}
-.lead{color:#633e64;line-height:1.8;font-size:16px;max-width:480px}
-.features{display:flex;gap:26px;flex-wrap:wrap;margin-top:48px;color:#61335e;font-size:13px}
-.features span:before{content:"✦";color:#df1888;margin-right:9px}
-.visual{height:180px;position:relative;margin-top:40px}
-.orb{position:absolute;left:24%;top:0;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff5fb,#ff89d3 36%,#b540b9 68%,#632087 92%);box-shadow:0 0 55px #ff2da585,0 0 100px #fff6;animation:float 6s ease-in-out infinite}
-.orb:after{content:"";position:absolute;inset:16px;border-radius:50%;border:1px solid #ffffff55}
-.orbit{position:absolute;left:12%;top:-35px;width:310px;height:230px;border:1px solid #c92e9870;border-radius:50%;transform:rotate(-25deg)}
-.orbit:after{content:"✦";position:absolute;right:12px;top:46px;color:#fff;font-size:20px;text-shadow:0 0 16px #ed188d}
-@keyframes float{50%{transform:translateY(-16px)}}
-@property --ring-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
-@keyframes ringSpin{to{--ring-angle:360deg}}
-.panel{position:relative;isolation:isolate;width:100%;max-width:470px;justify-self:center;padding:42px;border:2px solid transparent;border-radius:29px;color:#fff7fd;color-scheme:dark;background:linear-gradient(145deg,#2d1736fa,#160d22fc) padding-box,conic-gradient(from var(--ring-angle),#ff61bc,#ffdaef,#af76ff,#ff339c,#ff61bc) border-box;box-shadow:0 24px 70px #642e7659,0 0 30px #ff4cb55e,0 0 80px #ff5bac37;backdrop-filter:blur(20px);animation:ringSpin 8s linear infinite;transition:transform .3s,box-shadow .3s}
-.panel:before{content:"";position:absolute;inset:-11px;z-index:-1;border-radius:36px;pointer-events:none;background:conic-gradient(from var(--ring-angle),#ff56bb66,#f8adff3d,#9b58ff6b,#ff56bb66);filter:blur(21px);opacity:.78;animation:ringSpin 8s linear infinite}
-.panel:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:27px;background:radial-gradient(circle at 0% 0%,#ffffff12,transparent 48%);z-index:-1}
-.panel:hover{transform:translateY(-5px);box-shadow:0 30px 90px #642e7669,0 0 42px #ff4cb580,0 0 100px #ff5bac40}
-.panel-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
-.tag{font-size:11px;border:1px solid #ff7bc676;background:#ff5dab1c;color:#ffc2e6;border-radius:100px;padding:8px 12px;box-shadow:inset 0 0 16px #ff53ae12}
-.lock{font-size:24px;color:#fb87cd;text-shadow:0 0 15px #fc5fae80}
-h2{font:700 30px "Space Grotesk";margin:0 0 8px;letter-spacing:-1px}
-.sub{color:var(--muted);font-size:14px;margin:0 0 34px;line-height:1.6}
-label{display:block;font-size:13px;font-weight:700;margin-bottom:10px}
-.field{position:relative;margin-bottom:22px}
-.field input{width:100%;height:54px;border-radius:13px;border:1px solid #ffffff2a;background:#120c1d;color:white;padding:0 77px 0 16px;font:500 14px "DM Sans";outline:none;transition:border-color .25s,box-shadow .25s,transform .25s}
-.field input:focus{border-color:#ff76bf;box-shadow:0 0 0 3px #ff67b72c,0 0 24px #ff399024;transform:translateY(-1px)}
-.field input::placeholder{color:#96829e}
-.field-icon{position:absolute;right:16px;top:17px;color:#e79bc9;pointer-events:none}
-.toggle{position:absolute;right:8px;top:8px;padding:9px;background:none;border:0;color:#ffc2e4;cursor:pointer;font:600 12px "DM Sans";border-radius:7px}
-.toggle:hover{background:#ff72bf18}
-.options{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 28px;font-size:12px}
-.remember{display:flex;align-items:center;gap:9px;color:#d2bfda;cursor:pointer}
-.remember input{accent-color:#ff66b6}a{color:#ffaddc;text-decoration:none}a:hover{text-decoration:underline}
-.submit{width:100%;height:56px;border:1px solid #ffe1f488;border-radius:13px;color:#3a143b;font:700 15px "Space Grotesk";cursor:pointer;background:linear-gradient(105deg,#ffc4e9 0%,#ff6aba 50%,#dd7bff 100%);background-size:180% 100%;box-shadow:0 12px 35px #fa4ab460,0 0 25px #fa4ab42a;transition:transform .2s,filter .2s,background-position .4s,box-shadow .2s}
-.submit:hover{transform:translateY(-3px);filter:brightness(1.07);background-position:100% 0;box-shadow:0 18px 40px #fa4ab480}
-.submit:active{transform:translateY(0)}
-.notice{min-height:22px;margin:15px 0 0;font-size:12px;color:#ffc4dd;line-height:1.5}
-.footer{border-top:1px solid #ffffff20;padding-top:24px;margin-top:10px;text-align:center;color:#af9ab7;font-size:12px}
-button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #ffb5df;outline-offset:3px}
-@media(max-width:850px){.shell{grid-template-columns:1fr;gap:25px;padding:24px 18px 40px}.intro{padding:0 8px}.eyebrow{margin:44px 0 18px}h1{font-size:46px;letter-spacing:-2px}.visual{display:none}.features{margin-top:24px}.panel{padding:30px 24px}}
-@media(max-width:420px){.panel{padding:26px 19px}.options{font-size:11px}h2{font-size:27px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#a60c28">
+  <meta name="description" content="Portal de acceso SENATI con diseño inspirado en los paisajes y colores del Perú.">
+  <title>SENATI | Bienvenido al Perú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://thumb.wikimedia.org" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--red:#f43d5c;--red-light:#ff8b9b;--cream:#fff2e8;--muted:#c9b8bc}
+    *{box-sizing:border-box}
+    html{min-height:100%}
+    body{margin:0;min-height:100vh;background:#130a12;color:#fff9fa;font-family:"DM Sans",sans-serif;overflow-x:hidden}
+    .scene{position:fixed;inset:-4%;z-index:-4;pointer-events:none;background-image:linear-gradient(#0d0b19a0,#310b1a5a),url("https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Panoramic_view_of_Machu_Picchu.jpg/3840px-Panoramic_view_of_Machu_Picchu.jpg");background-position:center;background-size:cover;animation:cinema 29s ease-in-out infinite alternate;will-change:transform}
+    @keyframes cinema{from{transform:scale(1.04) translate(-1.5%,0)}to{transform:scale(1.18) translate(2%,-1.5%)}}
+    .shade{position:fixed;inset:0;z-index:-3;pointer-events:none;background:linear-gradient(100deg,#0e0b18dc 0%,#18091ecc 27%,#250f22a3 56%,#140917bd 100%),radial-gradient(ellipse at 4% 100%,#c01e3d82 0%,transparent 58%),radial-gradient(ellipse at 100% 0%,#ff274744 0%,transparent 46%)}
+    .shade:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0 40%,#ffeff408 55%,transparent 70%);background-size:190% 100%;animation:lightSweep 19s linear infinite}
+    @keyframes lightSweep{to{background-position:190% 0}}
+    .mist{position:fixed;z-index:-2;pointer-events:none;left:-20%;right:-20%;height:50%;bottom:-20%;filter:blur(34px);background:radial-gradient(ellipse at 30% 70%,#fff4f025,transparent 54%),radial-gradient(ellipse at 72% 60%,#ff476f38,transparent 60%);animation:mistMove 20s ease-in-out infinite alternate}
+    .mist.two{bottom:auto;top:-24%;opacity:.5;animation-delay:-11s;animation-duration:26s}
+    @keyframes mistMove{to{transform:translate(8%,-12%) scale(1.12)}}
+    .texture{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:radial-gradient(#fff 0.7px,transparent 0.9px);background-size:33px 33px;mask-image:linear-gradient(to right,#000,transparent 90%)}
+    .shell{display:grid;grid-template-columns:1.13fr 1fr;align-items:center;gap:65px;max-width:1280px;min-height:100vh;margin:auto;padding:50px 50px 70px;position:relative}
+    .intro{max-width:650px}
+    .brand{display:flex;align-items:center;gap:12px;font:700 23px "Space Grotesk",sans-serif;letter-spacing:2px}
+    .logo{display:grid;place-items:center;width:46px;height:46px;border:1px solid #ffd3dd8c;border-radius:14px;background:linear-gradient(140deg,#ed2950,#740d28);color:#fff;font-size:25px;box-shadow:0 8px 27px #d80e487b}
+    .badge-peru{display:inline-flex;align-items:center;gap:12px;margin-top:85px;padding:10px 15px;border:1px solid #ffdfe65d;border-radius:99px;background:#fff1f11c;box-shadow:inset 0 0 18px #fff1f108;backdrop-filter:blur(12px);font-size:11px;letter-spacing:2px;font-weight:700}
+    .flag{display:inline-grid;grid-template-columns:repeat(3,7px);height:15px;border-radius:2px;overflow:hidden;box-shadow:0 2px 8px #0004;transform-origin:left center;animation:flagWave 3s ease-in-out infinite}
+    .flag i{background:#da1734}.flag i:nth-child(2){background:#fff}
+    @keyframes flagWave{50%{transform:perspective(80px) rotateY(-20deg) skewY(-4deg)}}
+    h1{font:700 clamp(48px,5.4vw,78px)/1.08 "Space Grotesk",sans-serif;letter-spacing:-3.5px;margin:26px 0 22px;text-shadow:0 5px 30px #0006}
+    h1 span{background:linear-gradient(100deg,#fff,#ffbbc7 52%,#ff607e);background-clip:text;-webkit-background-clip:text;color:transparent}
+    .lead{max-width:500px;line-height:1.85;font-size:16px;color:#f3dce2;text-shadow:0 2px 12px #0007}
+    .divider-accent{width:74px;height:4px;border-radius:4px;margin:31px 0;background:linear-gradient(90deg,#ff4668,#fff);box-shadow:0 0 17px #ff496b9b}
+    .features{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .features span{display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid #ffffff38;border-radius:99px;background:#1b0e21a0;color:#fff4f5;font-size:12px;backdrop-filter:blur(10px)}
+    .features span:before{content:"✦";color:#ff9db1}
+    .region{font-size:12px;letter-spacing:3px;color:#eeb6c2;margin-top:46px;text-transform:uppercase}
+    @property --angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+    @keyframes spin{to{--angle:360deg}}
+    .panel{width:100%;max-width:476px;justify-self:center;position:relative;isolation:isolate;padding:42px;border:2px solid transparent;border-radius:28px;background:linear-gradient(140deg,#24101fe8,#100d18f2) padding-box,conic-gradient(from var(--angle),#ff2c57,#fff3f3,#ff5c78,#98243c,#fff3f3,#ff2c57) border-box;box-shadow:0 22px 80px #0009,0 0 50px #e6234660;backdrop-filter:blur(22px);animation:spin 10s linear infinite;transition:transform .25s,box-shadow .25s}
+    .panel:before{content:"";position:absolute;inset:-11px;z-index:-1;border-radius:34px;background:conic-gradient(from var(--angle),#f820458c,#fff3e646,#fb29498c,#ffffff4a,#f820458c);filter:blur(24px);opacity:.68;pointer-events:none;animation:spin 10s linear infinite}
+    .panel:after{content:"";position:absolute;inset:0;border-radius:26px;pointer-events:none;background:radial-gradient(ellipse at 0 0,#ffffff15,transparent 55%)}
+    .panel:hover{transform:translateY(-3px);box-shadow:0 30px 90px #000a,0 0 55px #ef2a5783}
+    .panel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:31px}
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid #ff90a875;border-radius:99px;background:#fa2f551e;color:#ffc5d0;font-size:11px;letter-spacing:.5px;font-weight:700}
+    .symbol{font-size:23px;color:#ffb6c5;text-shadow:0 0 15px #ed3159}
+    h2{font:700 30px "Space Grotesk",sans-serif;letter-spacing:-1px;margin:0 0 9px}
+    .sub{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 32px}
+    label{display:block;font-size:13px;font-weight:700;margin-bottom:10px}
+    .field{position:relative;margin-bottom:22px}
+    .field input{display:block;width:100%;height:55px;border:1px solid #ffffff33;border-radius:13px;outline:0;background:#140c18dd;color:#fff;padding:0 80px 0 16px;font:500 14px "DM Sans",sans-serif;transition:.2s}
+    .field input::placeholder{color:#9a8897}
+    .field input:focus{border-color:#ff829a;box-shadow:0 0 0 3px #ff38642c,0 0 21px #ff38582a}
+    .field-icon{position:absolute;right:17px;top:17px;color:#ffb4c3;pointer-events:none}
+    .toggle{position:absolute;right:7px;top:9px;padding:9px;background:transparent;border:0;border-radius:8px;color:#ffc3d1;cursor:pointer;font:700 12px "DM Sans"}
+    .toggle:hover{background:#ffffff12}
+    .options{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:28px;font-size:12px}
+    .remember{display:flex;align-items:center;gap:9px;margin:0;color:#e4d1d8;font-size:12px;cursor:pointer}
+    .remember input{accent-color:#f63257}
+    a{color:#ffb7c6;text-decoration:none}a:hover{text-decoration:underline}
+    .submit{width:100%;height:56px;border:1px solid #ffe7e79a;border-radius:13px;background:linear-gradient(100deg,#ff6982,#ff274e 50%,#f8a3b4);background-size:180% 100%;color:#fff;font:700 15px "Space Grotesk",sans-serif;cursor:pointer;box-shadow:0 10px 30px #fd1c4770;transition:.25s}
+    .submit:hover{transform:translateY(-2px);background-position:100% 0;box-shadow:0 15px 40px #ff2e5d91}
+    .submit:active{transform:translateY(0)}
+    .notice{min-height:24px;color:#ffbdca;font-size:12px;line-height:1.5;margin:14px 0 0}
+    .footer{border-top:1px solid #ffffff26;padding-top:23px;margin-top:7px;text-align:center;color:#bdaab5;font-size:12px}
+    .credit{margin:20px 0 0;color:#e2c4c9;font-size:11px;line-height:1.6;opacity:.9}.credit a{color:#ffe7e9;text-decoration:underline;text-underline-offset:3px}
+    button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #fff;outline-offset:3px}
+    @media(max-width:870px){.shell{grid-template-columns:1fr;gap:30px;padding:27px 20px 48px}.intro{max-width:670px}.badge-peru{margin-top:38px}h1{font-size:clamp(42px,9vw,64px);letter-spacing:-2px}.region{margin-top:26px}.panel{max-width:580px;padding:32px 26px}.scene{background-position:48% center}}
+    @media(max-width:430px){.shell{padding:20px 14px 37px}.brand{font-size:20px}.badge-peru{margin-top:32px}.panel{padding:27px 20px}.features{gap:8px}.features span{font-size:11px}.options{font-size:11px}h2{font-size:27px}.region{font-size:10px}.credit{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.scene{transform:none!important}}
+  </style>
 </head>
-<body><div class="grid" aria-hidden="true"></div><div class="ambient a" aria-hidden="true"></div><div class="ambient b" aria-hidden="true"></div><main class="shell">
-<section class="intro" aria-label="Presentación"><div class="brand"><span class="brand-mark" aria-hidden="true">✦</span>SENATI<span style="color:#ed258c">.</span></div>
-<div class="eyebrow"><span class="dot"></span> PLATAFORMA DIGITAL</div><h1>El futuro<br>empieza <span>aquí.</span></h1>
-<p class="lead">Una experiencia digital diseñada para conectar tus ideas, potenciar tu aprendizaje y llevarte al siguiente nivel.</p>
-<div class="features"><span>Diseño moderno</span><span>Experiencia intuitiva</span><span>Acceso desde cualquier dispositivo</span></div>
-<div class="visual" aria-hidden="true"><div class="orbit"></div><div class="orb"></div></div></section>
-<section class="panel" aria-label="Formulario de acceso"><div class="panel-top"><span class="tag">✦ PORTAL DE ACCESO</span><span class="lock" aria-hidden="true">◇</span></div>
-<h2>Bienvenido de nuevo</h2><p class="sub">Ingresa tus datos para continuar a tu espacio digital.</p>
-<form id="loginForm"><label for="email">Correo electrónico</label><div class="field"><input id="email" name="email" type="email" autocomplete="username" placeholder="nombre@ejemplo.com" required><span class="field-icon" aria-hidden="true">✉</span></div>
-<label for="password">Contraseña</label><div class="field"><input id="password" name="password" type="password" autocomplete="current-password" minlength="8" placeholder="Ingresa tu contraseña" required><button class="toggle" id="togglePassword" type="button" aria-label="Mostrar contraseña" aria-pressed="false">Mostrar</button></div>
-<div class="options"><label class="remember"><input type="checkbox" name="remember"> Recordarme</label><a href="#" id="recover">¿Olvidaste tu contraseña?</a></div>
-<button class="submit" type="submit">Iniciar sesión &nbsp; ↗</button><p id="message" class="notice" role="status" aria-live="polite"></p></form>
-<div class="footer">Interfaz de demostración · SENATI © <span id="year"></span></div></section></main>
-<script>
-const password=document.getElementById('password'),toggle=document.getElementById('togglePassword'),message=document.getElementById('message');
-document.getElementById('year').textContent=new Date().getFullYear();
-toggle.addEventListener('click',()=>{const showing=password.type==='password';password.type=showing?'text':'password';toggle.textContent=showing?'Ocultar':'Mostrar';toggle.setAttribute('aria-pressed',String(showing));toggle.setAttribute('aria-label',showing?'Ocultar contraseña':'Mostrar contraseña')});
-document.getElementById('loginForm').addEventListener('submit',event=>{event.preventDefault();message.textContent='Esta es una demostración visual. Para iniciar sesión realmente, es necesario conectar un servidor de autenticación seguro.';});
-document.getElementById('recover').addEventListener('click',event=>{event.preventDefault();message.textContent='La recuperación de contraseña estará disponible cuando se configure la autenticación.'});
-</script></body></html>
+<body>
+  <div class="scene" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+  <div class="mist" aria-hidden="true"></div>
+  <div class="mist two" aria-hidden="true"></div>
+  <div class="texture" aria-hidden="true"></div>
+  <main class="shell">
+    <section class="intro" aria-label="Presentación">
+      <div class="brand"><span class="logo" aria-hidden="true">✦</span> SENATI<span style="color:#ff708d">.</span></div>
+      <div class="badge-peru"><span class="flag" aria-label="Bandera de Perú" role="img"><i></i><i></i><i></i></span> INSPIRADO EN EL PERÚ</div>
+      <h1>Un país de historia.<br><span>Un futuro sin límites.</span></h1>
+      <p class="lead">Desde el corazón de los Andes, seguimos construyendo nuevas oportunidades. Conecta con tu aprendizaje y descubre todo lo que puedes lograr.</p>
+      <div class="divider-accent" aria-hidden="true"></div>
+      <div class="features"><span>Tu espacio digital</span><span>Aprendizaje conectado</span><span>Diseño para ti</span></div>
+      <div class="region">MACHU PICCHU · CUSCO · PERÚ</div>
+      <p class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Panoramic_view_of_Machu_Picchu.jpg" target="_blank" rel="noopener noreferrer">Alec Gamoff / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>. Imagen adaptada con efectos visuales.</p>
+    </section>
+    <section class="panel" aria-label="Formulario de acceso">
+      <div class="panel-top"><span class="tag">✦ PORTAL DE ACCESO</span><span class="symbol" aria-hidden="true">◇</span></div>
+      <h2>¡Bienvenido de nuevo!</h2>
+      <p class="sub">Ingresa tus datos y continúa tu experiencia digital.</p>
+      <form id="loginForm">
+        <label for="email">Correo electrónico</label>
+        <div class="field"><input id="email" name="email" type="email" autocomplete="username" placeholder="nombre@ejemplo.com" required><span class="field-icon" aria-hidden="true">✉</span></div>
+        <label for="password">Contraseña</label>
+        <div class="field"><input id="password" name="password" type="password" autocomplete="current-password" minlength="8" placeholder="Ingresa tu contraseña" required><button class="toggle" id="togglePassword" type="button" aria-label="Mostrar contraseña" aria-pressed="false">Mostrar</button></div>
+        <div class="options"><label class="remember"><input type="checkbox" name="remember"> Recordarme</label><a href="#" id="recover">¿Olvidaste tu contraseña?</a></div>
+        <button class="submit" type="submit">Iniciar sesión &nbsp; ↗</button>
+        <p id="message" class="notice" role="status" aria-live="polite"></p>
+      </form>
+      <div class="footer">Interfaz de demostración · SENATI © <span id="year"></span></div>
+    </section>
+  </main>
+  <script>
+    const password=document.getElementById('password');
+    const toggle=document.getElementById('togglePassword');
+    const message=document.getElementById('message');
+    document.getElementById('year').textContent=new Date().getFullYear();
+    toggle.addEventListener('click',()=>{
+      const showing=password.type==='password';
+      password.type=showing?'text':'password';
+      toggle.textContent=showing?'Ocultar':'Mostrar';
+      toggle.setAttribute('aria-pressed',String(showing));
+      toggle.setAttribute('aria-label',showing?'Ocultar contraseña':'Mostrar contraseña');
+    });
+    document.getElementById('loginForm').addEventListener('submit',event=>{
+      event.preventDefault();
+      message.textContent='Esta es una demostración visual. Para iniciar sesión realmente, es necesario conectar un servidor de autenticación seguro.';
+    });
+    document.getElementById('recover').addEventListener('click',event=>{
+      event.preventDefault();
+      message.textContent='La recuperación de contraseña estará disponible cuando se configure la autenticación.';
+    });
+  </script>
+</body>
+</html>
