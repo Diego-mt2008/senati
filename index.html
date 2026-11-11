@@ -2,33 +2,75 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffd633"><title>SENATI | Acceso</title>
+<meta name="theme-color" content="#ffacd9"><title>SENATI | Acceso</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--bg:#ffd633;--line:#ffffff18;--muted:#989eae;--cyan:#55d7ff;--blue:#526aff}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--bg);color:#18171c;font-family:"DM Sans",sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 10% 5%,#fff5a8b0,transparent 75%),radial-gradient(ellipse 50% 60% at 95% 95%,#ffa32088,transparent 75%)}
-.grid{position:fixed;inset:0;opacity:.28;pointer-events:none;background-image:linear-gradient(#62400030 1px,transparent 1px),linear-gradient(90deg,#62400030 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(90deg,#000,transparent 90%)}
-.shell{position:relative;display:grid;grid-template-columns:1.15fr 1fr;max-width:1280px;min-height:100vh;margin:auto;padding:40px;gap:60px;align-items:center}
-.brand{display:flex;align-items:center;gap:12px;font:700 22px "Space Grotesk";letter-spacing:2px}.brand-mark{display:grid;place-items:center;width:45px;height:45px;border:1px solid #32220a70;border-radius:13px;background:#18171c;color:#ffe45a;font-size:26px}
-.intro{padding:0 3vw}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#382d13;letter-spacing:2px;font-size:11px;font-weight:700;margin:100px 0 20px}.dot{width:7px;height:7px;background:#1b1b1f;border-radius:50%;box-shadow:0 0 12px #d68e00}
-h1{font:700 clamp(48px,5.4vw,80px)/1.05 "Space Grotesk";letter-spacing:-4px;margin:0 0 22px}h1 span{background:linear-gradient(100deg,#292019,#714018 50%,#ac5812);color:transparent;background-clip:text}
-.lead{color:#443919;line-height:1.8;font-size:16px;max-width:480px}.features{display:flex;gap:26px;flex-wrap:wrap;margin-top:48px;color:#3d3217;font-size:13px}.features span:before{content:"✦";color:#5b3a00;margin-right:9px}
-.visual{height:180px;position:relative;margin-top:40px}.orb{position:absolute;left:24%;top:0;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fffbd6,#ffc247 42%,#b76516 75%);box-shadow:0 0 90px #ffb82370;animation:float 6s ease-in-out infinite}.orbit{position:absolute;left:12%;top:-35px;width:310px;height:230px;border:1px solid #80540d66;border-radius:50%;transform:rotate(-25deg)}@keyframes float{50%{transform:translateY(-16px)}}
-.panel{width:100%;max-width:470px;justify-self:center;padding:42px;border:1px solid #ffffff20;border-radius:28px;background:linear-gradient(145deg,#171b27ee,#0d1019f5);color:#f7f9ff;color-scheme:dark;box-shadow:0 24px 90px #5c400b55,0 0 70px #fff5a824;backdrop-filter:blur(18px)}
-.panel-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.tag{font-size:11px;border:1px solid #6bd9ff50;background:#58baff12;color:#87ddff;border-radius:100px;padding:8px 12px}.lock{font-size:24px}
-h2{font:700 30px "Space Grotesk";margin:0 0 8px;letter-spacing:-1px}.sub{color:var(--muted);font-size:14px;margin:0 0 34px;line-height:1.6}
-label{display:block;font-size:13px;font-weight:700;margin-bottom:10px}.field{position:relative;margin-bottom:22px}.field input{width:100%;height:54px;border-radius:13px;border:1px solid #ffffff25;background:#090c14;color:white;padding:0 48px 0 16px;font:500 14px "DM Sans";outline:none;transition:.2s}.field input:focus{border-color:#63cfff;box-shadow:0 0 0 3px #4abfff1b}.field input::placeholder{color:#687186}.field-icon{position:absolute;right:16px;top:17px;color:#7d8da9}.toggle{position:absolute;right:8px;top:8px;padding:9px;background:none;border:0;color:#a5b8d5;cursor:pointer;font:600 12px "DM Sans"}
-.options{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 28px;font-size:12px}.remember{display:flex;align-items:center;gap:9px;color:#aeb5c5;cursor:pointer}.remember input{accent-color:#5acfff}a{color:#80d7ff;text-decoration:none}a:hover{text-decoration:underline}
-.submit{width:100%;height:56px;border:0;border-radius:13px;color:#07111c;font:700 15px "Space Grotesk";cursor:pointer;background:linear-gradient(100deg,#69e2ff,#628bff);box-shadow:0 12px 35px #3a80ff35;transition:transform .2s,filter .2s}.submit:hover{transform:translateY(-2px);filter:brightness(1.1)}.submit:active{transform:translateY(0)}
-.notice{min-height:22px;margin:15px 0 0;font-size:12px;color:#ffb9b9;line-height:1.5}.footer{border-top:1px solid var(--line);padding-top:24px;margin-top:10px;text-align:center;color:#838c9f;font-size:12px}
-@media(max-width:850px){.shell{grid-template-columns:1fr;gap:25px;padding:24px 18px 40px}.intro{padding:0 8px}.eyebrow{margin:44px 0 18px}h1{font-size:46px;letter-spacing:-2px}.visual{display:none}.features{margin-top:24px}.panel{padding:30px 24px}}@media(max-width:420px){.panel{padding:26px 19px}.options{font-size:11px}h2{font-size:27px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+:root{color-scheme:light;--pink:#ff5ba8;--soft:#ffd1eb;--ink:#352039;--glass:#211328;--muted:#c7b5ce}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--ink);font-family:"DM Sans",sans-serif;background:linear-gradient(125deg,#ffd8ee 0%,#ffacd9 38%,#f38acb 72%,#d7a4ff 100%);background-size:200% 200%;animation:skyShift 16s ease-in-out infinite}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(circle at 10% 10%,#fff9 0%,transparent 35%),radial-gradient(circle at 90% 75%,#ad4bff44 0%,transparent 36%),radial-gradient(circle at 45% 110%,#ff54b566 0%,transparent 45%)}
+body:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(110deg,transparent 34%,#ffffff16 50%,transparent 66%);background-size:220% 100%;animation:shimmer 13s linear infinite}
+@keyframes skyShift{50%{background-position:100% 100%}}
+@keyframes shimmer{to{background-position:-220% 0}}
+.grid{position:fixed;inset:0;z-index:0;opacity:.20;pointer-events:none;background-image:linear-gradient(#76356544 1px,transparent 1px),linear-gradient(90deg,#76356544 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(90deg,#000,transparent 95%)}
+.ambient{position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(2px);opacity:.54}
+.ambient.a{width:270px;height:270px;top:6%;right:11%;background:radial-gradient(circle,#fff8fdee,transparent 69%);animation:drift 9s ease-in-out infinite alternate}
+.ambient.b{width:400px;height:400px;left:-160px;bottom:-170px;background:radial-gradient(circle,#ff4ba6bb,transparent 69%);animation:drift 11s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(38px,-30px) scale(1.1)}}
+.shell{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr 1fr;max-width:1280px;min-height:100vh;margin:auto;padding:40px;gap:60px;align-items:center}
+.brand{display:flex;align-items:center;gap:12px;font:700 22px "Space Grotesk";letter-spacing:2px;color:#391c3e}
+.brand-mark{display:grid;place-items:center;width:45px;height:45px;border:1px solid #f978bb;border-radius:13px;background:linear-gradient(145deg,#52153f,#a63181);color:#fff;font-size:26px;box-shadow:0 6px 24px #c6248455}
+.intro{padding:0 3vw}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#713260;letter-spacing:2px;font-size:11px;font-weight:700;margin:100px 0 20px}
+.dot{width:8px;height:8px;background:#f51b93;border-radius:50%;box-shadow:0 0 0 5px #f72c9230,0 0 15px #ef218e;animation:heartbeat 2s ease-in-out infinite}
+@keyframes heartbeat{50%{box-shadow:0 0 0 9px #f72c920e,0 0 20px #ef218e}}
+h1{font:700 clamp(48px,5.4vw,80px)/1.05 "Space Grotesk";letter-spacing:-4px;margin:0 0 22px;color:#411d44;text-shadow:0 2px 25px #fff6}
+h1 span{background:linear-gradient(100deg,#8b2777,#f21988 48%,#8b3dce);color:transparent;background-clip:text;-webkit-background-clip:text}
+.lead{color:#633e64;line-height:1.8;font-size:16px;max-width:480px}
+.features{display:flex;gap:26px;flex-wrap:wrap;margin-top:48px;color:#61335e;font-size:13px}
+.features span:before{content:"✦";color:#df1888;margin-right:9px}
+.visual{height:180px;position:relative;margin-top:40px}
+.orb{position:absolute;left:24%;top:0;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff5fb,#ff89d3 36%,#b540b9 68%,#632087 92%);box-shadow:0 0 55px #ff2da585,0 0 100px #fff6;animation:float 6s ease-in-out infinite}
+.orb:after{content:"";position:absolute;inset:16px;border-radius:50%;border:1px solid #ffffff55}
+.orbit{position:absolute;left:12%;top:-35px;width:310px;height:230px;border:1px solid #c92e9870;border-radius:50%;transform:rotate(-25deg)}
+.orbit:after{content:"✦";position:absolute;right:12px;top:46px;color:#fff;font-size:20px;text-shadow:0 0 16px #ed188d}
+@keyframes float{50%{transform:translateY(-16px)}}
+@property --ring-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes ringSpin{to{--ring-angle:360deg}}
+.panel{position:relative;isolation:isolate;width:100%;max-width:470px;justify-self:center;padding:42px;border:2px solid transparent;border-radius:29px;color:#fff7fd;color-scheme:dark;background:linear-gradient(145deg,#2d1736fa,#160d22fc) padding-box,conic-gradient(from var(--ring-angle),#ff61bc,#ffdaef,#af76ff,#ff339c,#ff61bc) border-box;box-shadow:0 24px 70px #642e7659,0 0 30px #ff4cb55e,0 0 80px #ff5bac37;backdrop-filter:blur(20px);animation:ringSpin 8s linear infinite;transition:transform .3s,box-shadow .3s}
+.panel:before{content:"";position:absolute;inset:-11px;z-index:-1;border-radius:36px;pointer-events:none;background:conic-gradient(from var(--ring-angle),#ff56bb66,#f8adff3d,#9b58ff6b,#ff56bb66);filter:blur(21px);opacity:.78;animation:ringSpin 8s linear infinite}
+.panel:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:27px;background:radial-gradient(circle at 0% 0%,#ffffff12,transparent 48%);z-index:-1}
+.panel:hover{transform:translateY(-5px);box-shadow:0 30px 90px #642e7669,0 0 42px #ff4cb580,0 0 100px #ff5bac40}
+.panel-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.tag{font-size:11px;border:1px solid #ff7bc676;background:#ff5dab1c;color:#ffc2e6;border-radius:100px;padding:8px 12px;box-shadow:inset 0 0 16px #ff53ae12}
+.lock{font-size:24px;color:#fb87cd;text-shadow:0 0 15px #fc5fae80}
+h2{font:700 30px "Space Grotesk";margin:0 0 8px;letter-spacing:-1px}
+.sub{color:var(--muted);font-size:14px;margin:0 0 34px;line-height:1.6}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:10px}
+.field{position:relative;margin-bottom:22px}
+.field input{width:100%;height:54px;border-radius:13px;border:1px solid #ffffff2a;background:#120c1d;color:white;padding:0 77px 0 16px;font:500 14px "DM Sans";outline:none;transition:border-color .25s,box-shadow .25s,transform .25s}
+.field input:focus{border-color:#ff76bf;box-shadow:0 0 0 3px #ff67b72c,0 0 24px #ff399024;transform:translateY(-1px)}
+.field input::placeholder{color:#96829e}
+.field-icon{position:absolute;right:16px;top:17px;color:#e79bc9;pointer-events:none}
+.toggle{position:absolute;right:8px;top:8px;padding:9px;background:none;border:0;color:#ffc2e4;cursor:pointer;font:600 12px "DM Sans";border-radius:7px}
+.toggle:hover{background:#ff72bf18}
+.options{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 28px;font-size:12px}
+.remember{display:flex;align-items:center;gap:9px;color:#d2bfda;cursor:pointer}
+.remember input{accent-color:#ff66b6}a{color:#ffaddc;text-decoration:none}a:hover{text-decoration:underline}
+.submit{width:100%;height:56px;border:1px solid #ffe1f488;border-radius:13px;color:#3a143b;font:700 15px "Space Grotesk";cursor:pointer;background:linear-gradient(105deg,#ffc4e9 0%,#ff6aba 50%,#dd7bff 100%);background-size:180% 100%;box-shadow:0 12px 35px #fa4ab460,0 0 25px #fa4ab42a;transition:transform .2s,filter .2s,background-position .4s,box-shadow .2s}
+.submit:hover{transform:translateY(-3px);filter:brightness(1.07);background-position:100% 0;box-shadow:0 18px 40px #fa4ab480}
+.submit:active{transform:translateY(0)}
+.notice{min-height:22px;margin:15px 0 0;font-size:12px;color:#ffc4dd;line-height:1.5}
+.footer{border-top:1px solid #ffffff20;padding-top:24px;margin-top:10px;text-align:center;color:#af9ab7;font-size:12px}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #ffb5df;outline-offset:3px}
+@media(max-width:850px){.shell{grid-template-columns:1fr;gap:25px;padding:24px 18px 40px}.intro{padding:0 8px}.eyebrow{margin:44px 0 18px}h1{font-size:46px;letter-spacing:-2px}.visual{display:none}.features{margin-top:24px}.panel{padding:30px 24px}}
+@media(max-width:420px){.panel{padding:26px 19px}.options{font-size:11px}h2{font-size:27px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-<body><div class="grid" aria-hidden="true"></div><main class="shell">
-<section class="intro" aria-label="Presentación"><div class="brand"><span class="brand-mark" aria-hidden="true">✦</span>SENATI<span style="color:#6fdcff">.</span></div>
+<body><div class="grid" aria-hidden="true"></div><div class="ambient a" aria-hidden="true"></div><div class="ambient b" aria-hidden="true"></div><main class="shell">
+<section class="intro" aria-label="Presentación"><div class="brand"><span class="brand-mark" aria-hidden="true">✦</span>SENATI<span style="color:#ed258c">.</span></div>
 <div class="eyebrow"><span class="dot"></span> PLATAFORMA DIGITAL</div><h1>El futuro<br>empieza <span>aquí.</span></h1>
 <p class="lead">Una experiencia digital diseñada para conectar tus ideas, potenciar tu aprendizaje y llevarte al siguiente nivel.</p>
 <div class="features"><span>Diseño moderno</span><span>Experiencia intuitiva</span><span>Acceso desde cualquier dispositivo</span></div>
